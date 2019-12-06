@@ -15,22 +15,25 @@ public class Jeu {
     }
 
     public int nombreQuillesTombees() {
+        if(isStrike()){
+            return 10;
+        }
         return this.lancer1 + this.lancer2;
     }
 
     public boolean isSpare() {
-        return lancer1 + lancer2 == 10 && !this.isStrike();
+        return !this.isStrike() && lancer1 + lancer2 == 10;
     }
 
     public boolean isStrike() {
         return lancer1 == 10;
     }
 
-    public int nombreQuillesTombeesLancer1() {
+    public Integer nombreQuillesTombeesLancer1() {
         return lancer1;
     }
 
-    public int nombreQuillesTombeesLancer2() {
+    public Integer nombreQuillesTombeesLancer2() {
         return lancer2;
     }
 }
